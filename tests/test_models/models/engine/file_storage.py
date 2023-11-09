@@ -49,11 +49,11 @@ class FileStorage:
         (__file_path) exists; otherwise, do nothing. if the file doesnt exist,
         no exception is raised)
         """
-        if path.exists(self.__file_path) is False:
-            return
-        with open(self.__file_path, mode='r') as fd:
-            deserialized = None
-            try:
+        try:
+            with open(self.__file_path, mode='r') as fd:
                 deserialized = json.load(fd)
-            except Exception as e:
-                return
+                for value in deserialized.values():
+                    cls = value['__class__']
+                    self.new(eval(cls)(**value))
+        except Exception:
+            pass
