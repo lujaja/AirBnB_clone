@@ -8,6 +8,7 @@ import os
 from uuid import UUID
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
     """ Test case for the BaseModel class."""
     def __init__(self, *args, **kwargs):
@@ -24,7 +25,7 @@ class TestBaseModel(unittest.TestCase):
         """Tear down method to clean up after each test."""
         try:
             os.remove('file.json')
-        except:
+        except FileNotFoundError:
             pass
 
     def test_default(self):
@@ -59,9 +60,9 @@ class TestBaseModel(unittest.TestCase):
     def test_str(self):
         """Test the __str__ method of the BaseModel class"""
         instance = self.value()
-        self.assertEqual(str(instance), '[{}] ({}) {}'.format(self.name,
-            instance.id, instance.__dict__))
-                
+        self.assertEqual(str(instance), '[{}] ({}) {}'.format(
+            self.name, instance.id, instance.__dict__))
+
     def test_kwargs_none(self):
         """Tests creation of BaseModel instance with invalid none attrs"""
         invalid_dict = {None: None}
@@ -92,5 +93,6 @@ class TestBaseModel(unittest.TestCase):
         new_instance = BaseModel(**instance_dict)
         self.assertFalse(new_instance.created_at == new_instance.updated_at)
 
-if __name__ =='__main__':
+
+if __name__ == '__main__':
     unittest.main()
