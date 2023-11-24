@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="content" content="html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drop Down Menu</title>
+	<style>
+		body {
+			margin: 0;
+			background-color: rgb(223, 231, 229);
+		}
+
+		.nav {
+			width: 100%;
+			height: 80px;
+			background-color: rgb(7, 7, 80);
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+		}
+
+		ul li {
+			float: left;
+			margin-top: 20px;
+		}
+
+		ul li a {
+			width: 150px;
+			color: white;
+			display: block;
+			text-decoration: none;
+			font-size: 20px;
+			text-align: center;
+			padding: 10px;
+			border-radius: 10px;
+			font-family: Century Gothic;
+			font-weight: bold;
+		}
+
+		a:hover {
+			background-color: #669900;
+		}
+
+		ul li ul {
+			background-color: #000033;
+		}
+
+		ul li ul li {
+			float: none;
+
+		}
+
+		ul li ul {
+			display: none;
+		}
+
+		ul li:hover ul {
+			display: block;
+			border-radius: 10px;
+		}
+		ul li ul li a {
+			text-align: left;
+			font-size: 16px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li><a href="#">Home</a>
+				<ul>
+					<li><a href="images/JOAN.jpg">Register</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Forgot password</a></li>
+				</ul>
+			</li>
+			<li><a href="#">News</a>
+				<ul>
+					<li><a href="#">Current</a></li>
+					<li><a href="#">Trending</a></li>
+					<li><a href="#">Last weeks</a></li>
+					<li><a href="#">Todays</a></li>
+				</ul>
+			</li>
+			<li><a href="#">FeedBack</a>
+				<ul>
+					<li><a href="#">Email Me</a></li>
+					<li><a href="#">phone Call</a></li>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">tweeter</a></li>
+					<li><a href="#">Linkedin</a></li>
+				</ul>
+			</li>
+			<li><a href="#">More</a>
+				<ul>
+					<li><a href="#">More 1</a></li>
+					<li><a href="#">More 2</a></li>
+					<li><a href="#">More 3</a></li>
+					<li><a href="#">More 4</a></li>
+					<li><a href="#">More 5</a></li>
+				</ul>
+			</li>
+			<li><a href="#">About</a>
+				<ul>
+					<li><a href="#">Aother</a></li>
+					<li><a href="#">Website</a></li>
+					<li><a href="#">Education</a></li>
+					<li><a href="#">Family</a></li>
+					<li><a href="#">Hobbies</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Contact</a>
+				<ul>
+					<li><a href="#">Email</a></li>
+					<li><a href="#">Phone</a></li>
+					<li><a href="#">wechat</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+	
+</body>
+</html>
